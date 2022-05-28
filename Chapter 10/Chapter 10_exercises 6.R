@@ -4,13 +4,11 @@ bar <- c(2, 3, 1.1, 4, 0, 4.1, 3)
 #i ====
 counter <- 1
 loop2.result <- rep(NA, length(bar))
-while (counter <= length(bar)) {
-      if (bar[counter] != 0) {
-            loop2.result[counter]  <-  foo  /  bar[counter]
-      } else{
-            loop2.result[counter] <- NA
-      }
-      counter <- counter + 1
+
+while (is.finite(foo/bar[counter])) { 
+      
+    loop2.result[counter] <-  foo  /  bar[counter]    
+    counter <- counter + 1
 }
 loop2.result
 #ii ----
